@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    static class Library
+   public static class Library
     {
         #region Properties
         public static string Name { get; set; }
@@ -29,7 +29,13 @@ namespace ConsoleApplication1
         #region Methods
         public static void AddBook(Book book)
         {
-            Books.Add(book);
+            using (var model = new LibraryModel())
+            {
+                model.Books.Add(book);
+                model.SaveChanges();
+                
+           }
+                
         }
         public static void PrintBooks()
         {

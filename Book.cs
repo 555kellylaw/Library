@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +11,13 @@ namespace ConsoleApplication1
     /// Definition of a book
     /// 
     /// </summary>
-    class Book
+   public class Book
     {
         #region Properties
         /// <summary>
         /// ISBN of the book
         /// </summary>
+        [Key]
         public int ISBN { get; set; }
         /// <summary>
         /// Title of the book
