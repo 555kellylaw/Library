@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    public enum RentalTypes
+    {
+        Book,
+        Audio,
+        Video
+    }
    public static class Library
     {
+    
         #region Properties
         public static string Name { get; set; }
         public static string Address { get; set; }
