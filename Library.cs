@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ConsoleApplication1
 {
@@ -43,19 +44,12 @@ namespace ConsoleApplication1
            }
                 
         }
-        public static void PrintBooks()
+        public static List<Book> GetBooks()
         {
             using (var model = new LibraryModel())
             {
-                foreach (var book in model.Books)
-                {
-                    Console.WriteLine("Title: {0}, ISBN: {1}, Price: {2}, Published: {3}",
-                        book.Title, book.ISBN, book.Price, book.PublishedYear);
-
-
-                }
-
-
+                var books = model.Books.Include(b => b.Author);
+                return books.ToList<Book>();
             }
         }
         #endregion
