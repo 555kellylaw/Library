@@ -63,12 +63,22 @@
     <Compile Include="Library.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="LibraryModel.cs" />
+    <Compile Include="Migrations\201612050532363_AuthorChange.cs" />
+    <Compile Include="Migrations\201612050532363_AuthorChange.Designer.cs">
+      <DependentUpon>201612050532363_AuthorChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rental.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612050532363_AuthorChange.resx">
+      <DependentUpon>201612050532363_AuthorChange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
